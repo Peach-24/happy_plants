@@ -87,7 +87,7 @@ export default class App extends Component {
               />
             </div>
           ) : (
-            <div className="main-container">
+            <div className="main-container results">
               <Header type="results" reset={this.reset} />
               <Results
                 current_weather={current_weather}

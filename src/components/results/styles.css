@@ -11,3 +11,21 @@ h3 {
 #results-breakdown {
   display: inline-flex;
 }
+
+.date-options {
+  width: 100%;
+}
+
+input {
+  width: 50px;
+}
+
+table {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 300px;
+}
+
+p {
+  margin: 5px 3px;
+}

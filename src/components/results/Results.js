@@ -20,40 +20,50 @@ export default function Results({
   return (
     <div>
       <h1>Weather Report</h1>
-      <div id="date-selection">
-        <label htmlFor="today">
-          Today
-          <input
-            type="radio"
-            id="today"
-            name="day-option"
-            value="today"
-            checked={state.day === "today"}
-            onChange={handleChange}
-          ></input>
-        </label>
-        <label htmlFor="tomorrow">
-          <input
-            type="radio"
-            id="female"
-            name="day-option"
-            value="tomorrow"
-            checked={state.day === "tomorrow"}
-            onChange={handleChange}
-          ></input>
-          Tomorrow
-        </label>
-        <label htmlFor="day_after">
-          <input
-            type="radio"
-            id="day_after"
-            name="day-option"
-            value="day_after"
-            checked={state.day === "day_after"}
-            onChange={handleChange}
-          ></input>
-          Day after
-        </label>
+      <div className="date-options">
+        <table>
+          <tr>
+            <td>
+              <label htmlFor="today">
+                <input
+                  type="radio"
+                  className="day-option today"
+                  name="day-option"
+                  value="today"
+                  checked={state.day === "today"}
+                  onChange={handleChange}
+                ></input>
+                <p>Today</p>
+              </label>
+            </td>
+            <td>
+              <label htmlFor="tomorrow">
+                <input
+                  type="radio"
+                  className="day-option tomorrow"
+                  name="day-option"
+                  value="tomorrow"
+                  checked={state.day === "tomorrow"}
+                  onChange={handleChange}
+                ></input>
+                <p>Tomorrow</p>
+              </label>
+            </td>
+            <td>
+              <label htmlFor="day_after">
+                <input
+                  type="radio"
+                  className="day-option day_after"
+                  name="day-option"
+                  value="day_after"
+                  checked={state.day === "day_after"}
+                  onChange={handleChange}
+                ></input>
+                <p>Day after</p>
+              </label>
+            </td>
+          </tr>
+        </table>
       </div>
       <div id="location-info">
         <h3>

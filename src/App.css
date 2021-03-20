@@ -19,7 +19,7 @@
 }
 
 .main-container {
-  padding: 2rem 10px;
+  padding: 0rem 10px;
   width: 100%;
   position: fixed;
   top: 50%;
@@ -32,4 +32,8 @@
 .home {
   position: fixed;
   top: 40%;
+}
+
+.results {
+  height: 100%;
 }
