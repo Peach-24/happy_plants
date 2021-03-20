@@ -6,7 +6,6 @@ import Header from "./components/header/Header";
 import Form from "./components/form/Form";
 import Results from "./components/results/Results";
 
-import fetchLatLng from "./api/api_calls";
 import { isValidPostcode } from "./utils/utils";
 
 const weatherApiKey = `8941fff33a9f4798b7d175917211903`;
