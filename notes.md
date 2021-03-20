@@ -5,12 +5,15 @@ INPUT:
 
 - postcode
 - options: Do your plants... need sunlight / rainfall
-- time selection: today / the full week
 
 **Results**
+Options:
+
+- time selection: today / tomorrow / the day after
+
 OUTPUT:
 
-- Weather for today
+- Weather for today / tomorrow / the day after
 - Happy Plants score
 
 ---
@@ -33,6 +36,8 @@ OUTPUT:
 
 #### Pages
 
+Mobile first design, responsive, clear & easy to use
+
 **Home Screen**
 
 - Title
@@ -46,3 +51,9 @@ OUTPUT:
 - Weather breakdown
 - Happy plants results
 - Reset button (Return to home screen)
+
+---
+
+#### Component Tree
+
+![Component Tree](src/assets/comp_tree_happy_plants.png)
