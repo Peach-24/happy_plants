@@ -1,0 +1,3 @@
+const fetchLatLng = (postcode) => {
+  // code here...
+};

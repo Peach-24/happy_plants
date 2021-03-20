@@ -1,0 +1,10 @@
+#nav-header {
+  display: flex;
+  background-color: darkgreen;
+  align-items: right;
+}
+
+#nav-header p {
+  color: #fff;
+  margin: 5px 2rem;
+}
