@@ -4,6 +4,7 @@ import axios from "axios";
 
 import Header from "./components/header/Header";
 import Form from "./components/form/Form";
+import Weather from "./components/weather/Weather";
 
 import fetchLatLng from "./api/api_calls";
 import { isValidPostcode } from "./utils/utils";
@@ -15,6 +16,18 @@ export default class App extends Component {
     form_submitted: false,
     postcode: "",
     postcode_error: "",
+    current_weather: {},
+    forecast_weather: {},
+  };
+
+  reset = () => {
+    this.setState({
+      form_submitted: false,
+      postcode: "",
+      postcode_error: "",
+      current_weather: {},
+      forecast_weather: {},
+    });
   };
 
   fetchWeather = (postcode) => {
@@ -40,6 +53,11 @@ export default class App extends Component {
             )
             .then((res) => {
               console.log(res.data);
+              this.setState({
+                current_weather: res.data.current,
+                forecast_weather: res.data.forecast,
+                form_submitted: true,
+              });
               return res.data;
             });
         });
@@ -47,7 +65,12 @@ export default class App extends Component {
   };
 
   render() {
-    const { form_submitted, postcode_error } = this.state;
+    const {
+      form_submitted,
+      postcode_error,
+      current_weather,
+      forecast_weather,
+    } = this.state;
     return (
       <div className="App">
         {!form_submitted ? (
@@ -60,7 +83,11 @@ export default class App extends Component {
           </>
         ) : (
           <>
-            <Header type="results" />
+            <Header type="results" reset={this.reset} />
+            <Weather
+              current_weather={current_weather}
+              forecast_weather={forecast_weather}
+            />
           </>
         )}
       </div>

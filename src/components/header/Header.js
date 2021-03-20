@@ -1,8 +1,7 @@
 import React from "react";
 import "./styles.css";
 
-export default function Header(props) {
-  const { type } = props;
+export default function Header({ type, reset }) {
   return (
     <div>
       {type === "home" ? (
@@ -14,7 +13,7 @@ export default function Header(props) {
         <>
           <nav id="nav-header">
             <p>Happy Plants</p>
-            <button>Reset</button>
+            <button onClick={() => reset()}>Reset</button>
           </nav>
         </>
       )}

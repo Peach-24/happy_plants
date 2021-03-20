@@ -1,9 +1,10 @@
 import React from "react";
+import "./styles.css";
 
 export default function Form({ fetchWeather, postcode_error }) {
   return (
     <>
-      <form>
+      <form id="postcode-form">
         <input id="postcode-input" placeholder="Enter your postcode" />
         <button
           type="submit"
