@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./styles.css";
 
 import Weather from "../weather/Weather";
+import Happiness from "../happiness/Happiness";
 
 export default function Results({
   current_weather,
@@ -59,11 +60,14 @@ export default function Results({
           {location_data.name}, {location_data.region}
         </h3>
       </div>
-      <Weather
-        daySelected={state.day}
-        current_weather={current_weather}
-        forecast_weather={forecast_weather}
-      />
+      <div id="results-breakdown">
+        <Weather
+          daySelected={state.day}
+          current_weather={current_weather}
+          forecast_weather={forecast_weather.forecastday}
+        />
+        <Happiness />
+      </div>
     </div>
   );
 }

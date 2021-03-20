@@ -3,3 +3,7 @@
   padding: 1rem;
   margin: 10px;
 }
+
+#results-breakdown {
+  display: inline-flex;
+}
