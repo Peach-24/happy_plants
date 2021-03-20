@@ -1,6 +1,7 @@
-## Notes
+# Notes
 
 **First Form**
+
 INPUT:
 
 - postcode
@@ -18,7 +19,7 @@ OUTPUT:
 
 ---
 
-#### Calculating how happy plants will be
+### Calculating how happy plants will be
 
 **Need sunlight:**
 
@@ -34,7 +35,7 @@ OUTPUT:
 
 ---
 
-#### Pages
+### Pages
 
 Mobile first design, responsive, clear & easy to use
 
@@ -54,6 +55,6 @@ Mobile first design, responsive, clear & easy to use
 
 ---
 
-#### Component Tree
+### Component Tree
 
 ![Component Tree](src/assets/comp_tree_happy_plants.png)
