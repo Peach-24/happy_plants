@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import axios from "axios";
+// import background from "src/assets/garden-fence.png";
 
 import Header from "./components/header/Header";
 import Form from "./components/form/Form";
@@ -75,25 +76,28 @@ export default class App extends Component {
       location_data,
     } = this.state;
     return (
-      <div className="App">
-        {!form_submitted ? (
-          <>
-            <Header type="home" />
-            <Form
-              fetchWeather={this.fetchWeather}
-              postcode_error={postcode_error}
-            />
-          </>
-        ) : (
-          <>
-            <Header type="results" reset={this.reset} />
-            <Results
-              current_weather={current_weather}
-              forecast_weather={forecast_weather}
-              location_data={location_data}
-            />
-          </>
-        )}
+      <div id="App">
+        <div id="background">
+          {!form_submitted ? (
+            <div className="main-container home">
+              <Header type="home" />
+              <Form
+                fetchWeather={this.fetchWeather}
+                postcode_error={postcode_error}
+              />
+            </div>
+          ) : (
+            <div className="main-container">
+              <Header type="results" reset={this.reset} />
+              <Results
+                current_weather={current_weather}
+                forecast_weather={forecast_weather}
+                location_data={location_data}
+              />
+            </div>
+          )}
+        </div>
+        {/* <img src={background} alt={"background"} /> */}
       </div>
     );
   }

@@ -1,7 +1,11 @@
 #location-info {
   background-color: lightblue;
-  padding: 1rem;
-  margin: 10px;
+  padding: 10px;
+  margin: 20px 10px 5px;
+}
+
+h3 {
+  margin: 0;
 }
 
 #results-breakdown {
