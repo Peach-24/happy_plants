@@ -1,5 +1,29 @@
 #weather-info {
-  background-color: rgb(211, 226, 211);
-  padding: 1rem;
+  display: flex;
   margin: 10px;
+  justify-content: space-between;
+}
+#weather-info-left {
+  margin: 10px;
+}
+
+#weather-info-right {
+  margin: 10px;
+  text-align: left;
+}
+
+#weather-breakdown {
+  background-color: rgba(153, 185, 245, 0.342);
+  padding: 10px;
+  margin: 10px auto;
+  max-width: 400px;
+  text-align: left;
+}
+
+h4 {
+  margin-left: 20px;
+}
+
+p {
+  margin: 0;
 }

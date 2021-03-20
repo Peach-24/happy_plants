@@ -12,8 +12,8 @@ export default function Header({ type, reset }) {
       ) : (
         <>
           <nav id="nav-header">
-            <p>Happy Plants</p>
-            <button onClick={() => reset()}>Reset</button>
+            <p onClick={() => reset()}>Happy Plants</p>
+            {/* <button>Reset</button> */}
           </nav>
         </>
       )}

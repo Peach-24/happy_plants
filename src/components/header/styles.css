@@ -1,12 +1,7 @@
-#nav-header {
-  display: flex;
-  background-color: rgba(25, 189, 25, 0.678);
-  align-items: right;
-  width: 100%;
-}
-
 #nav-header p {
   color: #fff;
+  background-color: rgba(25, 189, 25, 0.678);
   font-weight: 700;
-  margin: 5px 2rem;
+  margin: 0 0 25px;
+  padding: 10px;
 }
