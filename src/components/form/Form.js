@@ -1,7 +1,6 @@
 import React from "react";
-import { fetchLatLng } from "../../api/api_calls";
 
-export default function Form({ fetchWeather }) {
+export default function Form({ fetchWeather, postcode_error }) {
   return (
     <>
       <form>
@@ -15,6 +14,7 @@ export default function Form({ fetchWeather }) {
         >
           Go
         </button>
+        <p>{postcode_error}</p>
       </form>
     </>
   );
