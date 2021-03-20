@@ -1,10 +1,11 @@
 import React from "react";
+import "./styles.css";
 
-export default function Weather({ current_weather, forecast_weather }) {
-  return (
-    <div>
-      <h1>Weather Report</h1>
-      <p>{forecast_weather.toString()}</p>
-    </div>
-  );
+export default function Weather({
+  daySelected,
+  current_weather,
+  forecast_weather,
+}) {
+  console.log(daySelected);
+  return <div id="weather-info"></div>;
 }

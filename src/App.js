@@ -4,7 +4,7 @@ import axios from "axios";
 
 import Header from "./components/header/Header";
 import Form from "./components/form/Form";
-import Weather from "./components/weather/Weather";
+import Results from "./components/results/Results";
 
 import fetchLatLng from "./api/api_calls";
 import { isValidPostcode } from "./utils/utils";
@@ -18,6 +18,7 @@ export default class App extends Component {
     postcode_error: "",
     current_weather: {},
     forecast_weather: {},
+    location_data: {},
   };
 
   reset = () => {
@@ -27,6 +28,7 @@ export default class App extends Component {
       postcode_error: "",
       current_weather: {},
       forecast_weather: {},
+      location_data: {},
     });
   };
 
@@ -56,6 +58,7 @@ export default class App extends Component {
               this.setState({
                 current_weather: res.data.current,
                 forecast_weather: res.data.forecast,
+                location_data: res.data.location,
                 form_submitted: true,
               });
               return res.data;
@@ -70,6 +73,7 @@ export default class App extends Component {
       postcode_error,
       current_weather,
       forecast_weather,
+      location_data,
     } = this.state;
     return (
       <div className="App">
@@ -84,9 +88,10 @@ export default class App extends Component {
         ) : (
           <>
             <Header type="results" reset={this.reset} />
-            <Weather
+            <Results
               current_weather={current_weather}
               forecast_weather={forecast_weather}
+              location_data={location_data}
             />
           </>
         )}
