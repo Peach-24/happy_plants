@@ -38,5 +38,9 @@
   },
   "devDependencies": {
     "cypress": "^6.8.0"
-  }
+  },
+  "description": "Build a responsive front end UI.",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
