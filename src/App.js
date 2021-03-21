@@ -7,7 +7,6 @@ import Form from "./components/form/Form";
 import Results from "./components/results/Results";
 
 import { isValidPostcode } from "./utils/utils";
-import { trimForecastData } from "./utils/utils";
 
 const weatherApiKey = `8941fff33a9f4798b7d175917211903`;
 
@@ -53,7 +52,7 @@ export default class App extends Component {
           return latLng;
         })
         .then((latLng) => {
-          const weather = axios
+          axios
             .get(
               `http://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&days=3&q=${latLng.lat},${latLng.lng}`
             )

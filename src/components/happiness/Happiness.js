@@ -15,7 +15,7 @@ export default function Happiness({ selections, forecast_weather }) {
       setLoaded(true);
     }
     return () => (mounted = false);
-  }, []);
+  }, [forecast_weather, selections]);
 
   return (
     <>

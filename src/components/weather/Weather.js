@@ -11,7 +11,7 @@ export default function Weather({
       <div id="weather-info">
         <div id="weather-info-left">
           <p>{current_weather.condition.text}</p>
-          <img src={current_weather.condition.icon} />
+          <img alt="weather-icon" src={current_weather.condition.icon} />
         </div>
         <div id="weather-info-right">
           <p className="weather-stats">
@@ -35,7 +35,10 @@ export default function Weather({
       <div id="weather-info">
         <div id="weather-info-left">
           <p>{forecast_weather[1].day.condition.text}</p>
-          <img src={forecast_weather[1].day.condition.icon} />
+          <img
+            alt="weather-icon"
+            src={forecast_weather[1].day.condition.icon}
+          />
         </div>
         <div id="weather-info-right">
           <p className="weather-stats">
@@ -59,7 +62,10 @@ export default function Weather({
       <div id="weather-info">
         <div id="weather-info-left">
           <p>{forecast_weather[2].day.condition.text}</p>
-          <img src={forecast_weather[2].day.condition.icon} />
+          <img
+            alt="weather-icon"
+            src={forecast_weather[2].day.condition.icon}
+          />
         </div>
         <div id="weather-info-right">
           <p className="weather-stats">
