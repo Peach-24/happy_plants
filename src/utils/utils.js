@@ -3,9 +3,16 @@ const isValidPostcode = (postcode) => {
   return regex.test(postcode);
 };
 
-const generatePlantAdvice = (selections, forecast_weather) => {};
+const trimForecastData = (forecast_data) => {
+  // code here
+};
+
+const generatePlantAdvice = (selections, forecast_weather) => {
+  // code here
+};
 
 module.exports = {
   isValidPostcode,
+  trimForecastData,
   generatePlantAdvice,
 };
