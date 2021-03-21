@@ -7,6 +7,7 @@ import Form from "./components/form/Form";
 import Results from "./components/results/Results";
 
 import { isValidPostcode } from "./utils/utils";
+import { trimForecastData } from "./utils/utils";
 
 const weatherApiKey = `8941fff33a9f4798b7d175917211903`;
 
@@ -48,7 +49,7 @@ export default class App extends Component {
             lat: res.data.result.latitude,
             lng: res.data.result.longitude,
           };
-          console.log(latLng);
+
           return latLng;
         })
         .then((latLng) => {
@@ -57,7 +58,6 @@ export default class App extends Component {
               `http://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&days=3&q=${latLng.lat},${latLng.lng}`
             )
             .then((res) => {
-              console.log(res.data);
               this.setState({
                 current_weather: res.data.current,
                 forecast_weather: res.data.forecast,
@@ -85,7 +85,7 @@ export default class App extends Component {
       forecast_weather,
       location_data,
     } = this.state;
-    console.log(this.state);
+
     return (
       <div id="App">
         <div id="background">

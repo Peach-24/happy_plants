@@ -19,17 +19,35 @@ describe("isValidPostcode", () => {
 describe("trimForecastData", () => {
   it("returns an empty obj when passed an empty array", () => {
     const input = [];
-    expect(trimForecastData(input)).toBe({});
+    expect(trimForecastData(input)).toEqual([]);
   });
-  it("returns only the chance of rain, avg temp, UV level, humidity", () => {
+  it("returns only the chance of rain, avg temp, UV level, humidity, for each of the three days", () => {
     const input = forecast_weather_data;
-    const expectedOutput = {
-      avgtemp_c: 7.3,
-      daily_chance_of_rain: "0",
-      uv: 3,
-      avghumidity: 80,
-    };
-    expect(trimForecastData(input)).toBe(expectedOutput);
+    const expectedOutput = [
+      {
+        avghumidity: 80,
+        avgtemp_c: 7.3,
+        daily_chance_of_rain: "0",
+        uv: 3,
+      },
+      {
+        avghumidity: 77,
+        avgtemp_c: 7.8,
+        daily_chance_of_rain: "0",
+        uv: 2,
+      },
+      {
+        avghumidity: 69,
+        avgtemp_c: 8.6,
+        daily_chance_of_rain: "0",
+        uv: 2,
+      },
+    ];
+    expect(trimForecastData(input)).toEqual(expectedOutput);
+    expect(trimForecastData(input)[0]).toHaveProperty("avghumidity");
+    expect(trimForecastData(input)[0]).toHaveProperty("avgtemp_c");
+    expect(trimForecastData(input)[0]).toHaveProperty("daily_chance_of_rain");
+    expect(trimForecastData(input)[0]).toHaveProperty("uv");
   });
 });
 
