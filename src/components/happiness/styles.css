@@ -1,6 +1,10 @@
 #happiness-results {
-  background-color: rgb(255, 208, 0);
-  padding: auto;
+  background-color: rgba(255, 255, 255, 0.685);
+  padding: 5px auto;
   margin: 10px;
   padding: 5px;
+}
+
+h3 {
+  font-size: 14px;
 }

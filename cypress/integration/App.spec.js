@@ -45,17 +45,19 @@ describe("The form component", () => {
     cy.get("#submit-postcode").click();
     cy.get("h1").should("have.text", "Weather Report");
   });
+  it("location is tailored to postcode", () => {
+    cy.get("h4").should("have.text", "Ince In Makerfield, Greater Manchester");
+  });
 });
 
-// describe("The Happiness component", () => {
-//   it("has an icon for the overall happiness", () => {
-//     cy.visit("localhost:3000");
-//     cy.get("#emotion-icon");
-//   });
-//   it("has a text description of happiness level'", () => {
-//     cy.get("#emotion-text");
-//   });
-//   it("has a text message for guidance / relating to weather'", () => {
-//     cy.get("#emotion-text");
-//   });
-// });
+describe("The Happiness component", () => {
+  it("shows the general advice message if plants don't need rainfall or sunshine", () => {
+    cy.visit("localhost:3000");
+    cy.get("button").click();
+    cy.get("h1").should("have.text", "Happy Plants");
+    cy.get("#postcode-input").type("WN3 4DQ");
+    cy.get("#submit-postcode").click();
+    cy.get("#happiness-results");
+    cy.get("#no-required-weather-message");
+  });
+});

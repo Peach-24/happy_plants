@@ -8,6 +8,7 @@ export default function Results({
   current_weather,
   forecast_weather,
   location_data,
+  selections,
 }) {
   const [state, setState] = useState({
     day: "today",
@@ -75,10 +76,14 @@ export default function Results({
           daySelected={state.day}
           current_weather={current_weather}
           forecast_weather={forecast_weather.forecastday}
+          selections={selections}
         />
-      </div>
-      <div id="happy-breakdown">
-        <Happiness />
+        <div id="happy-breakdown">
+          <Happiness
+            selections={selections}
+            forecast_weather={forecast_weather.forecastday}
+          />
+        </div>
       </div>
     </div>
   );

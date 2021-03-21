@@ -105,6 +105,10 @@ export default class App extends Component {
                 current_weather={current_weather}
                 forecast_weather={forecast_weather}
                 location_data={location_data}
+                selections={{
+                  needs_rainfall: this.state.needs_rainfall,
+                  needs_sunshine: this.state.needs_sunshine,
+                }}
               />
             </div>
           )}

@@ -5,7 +5,6 @@ export default function Weather({
   daySelected,
   current_weather,
   forecast_weather,
-  location_data,
 }) {
   if (daySelected === "today") {
     return (

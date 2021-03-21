@@ -2,7 +2,8 @@
   background-image: url("./assets/garden-fence.png");
   background-repeat: repeat;
   background-size: contain;
-  height: 30%;
+  height: 20%;
+  max-height: 150px;
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -26,7 +27,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  /* background-color: rgba(255, 255, 255, 0.233); */
 }
 
 .home {
