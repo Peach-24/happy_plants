@@ -10,12 +10,6 @@ describe("The App - homepage", () => {
   it("has a background", () => {
     cy.get("#background");
   });
-  it("should take you to a results page when you enter a valid postcode and click go", () => {
-    cy.get("#postcode-input").type("WN3 4DQ");
-    cy.get("#postcode-input").should("have.value", "WN3 4DQ");
-    cy.get("#submit-postcode").click();
-    cy.get("h1").should("have.text", "Weather Report");
-  });
 });
 
 describe("The form component", () => {
@@ -44,6 +38,12 @@ describe("The form component", () => {
     cy.get("#needs-rainfall").should("not.be.checked");
     cy.get("#needs-sunshine").click();
     cy.get("#needs-sunshine").should("not.be.checked");
+  });
+  it("should take you to a results page when you enter a valid postcode and click go", () => {
+    cy.get("#postcode-input").type("WN3 4DQ");
+    cy.get("#postcode-input").should("have.value", "WN3 4DQ");
+    cy.get("#submit-postcode").click();
+    cy.get("h1").should("have.text", "Weather Report");
   });
 });
 

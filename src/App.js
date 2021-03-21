@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import axios from "axios";
-// import background from "src/assets/garden-fence.png";
 
 import Header from "./components/header/Header";
 import Form from "./components/form/Form";
@@ -19,6 +18,8 @@ export default class App extends Component {
     current_weather: {},
     forecast_weather: {},
     location_data: {},
+    needs_rainfall: false,
+    needs_sunshine: false,
   };
 
   reset = () => {
@@ -29,6 +30,8 @@ export default class App extends Component {
       current_weather: {},
       forecast_weather: {},
       location_data: {},
+      needs_rainfall: false,
+      needs_sunshine: false,
     });
   };
 
@@ -67,6 +70,13 @@ export default class App extends Component {
     }
   };
 
+  setWeatherNeedsInState = (selections) => {
+    this.setState({
+      needs_rainfall: selections.needs_rainfall,
+      needs_sunshine: selections.needs_sunshine,
+    });
+  };
+
   render() {
     const {
       form_submitted,
@@ -75,6 +85,7 @@ export default class App extends Component {
       forecast_weather,
       location_data,
     } = this.state;
+    console.log(this.state);
     return (
       <div id="App">
         <div id="background">
@@ -83,6 +94,7 @@ export default class App extends Component {
               <Header type="home" />
               <Form
                 fetchWeather={this.fetchWeather}
+                setWeatherNeedsInState={this.setWeatherNeedsInState}
                 postcode_error={postcode_error}
               />
             </div>
