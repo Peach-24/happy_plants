@@ -42,7 +42,7 @@ export default class App extends Component {
       this.setState({ postcode_error: "Error: Invalid Postcode" });
     } else {
       return axios
-        .get(`http://api.postcodes.io/postcodes/${postcode}`)
+        .get(`https://api.postcodes.io/postcodes/${postcode}`)
         .then((res) => {
           let latLng = {
             lat: res.data.result.latitude,
@@ -54,7 +54,7 @@ export default class App extends Component {
         .then((latLng) => {
           axios
             .get(
-              `http://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&days=3&q=${latLng.lat},${latLng.lng}`
+              `https://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&days=3&q=${latLng.lat},${latLng.lng}`
             )
             .then((res) => {
               this.setState({
