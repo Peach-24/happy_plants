@@ -29,3 +29,24 @@
   border-radius: 4px;
   cursor: pointer;
 }
+
+label {
+  width: 80%;
+  margin: auto;
+}
+
+.plants-need-option {
+  display: flex;
+}
+
+#needs-rainfall {
+  margin: 0;
+}
+#needs-sunshine {
+  margin: 0;
+}
+
+#needs-desc {
+  margin: 1rem;
+  font-style: italic;
+}

@@ -5,7 +5,24 @@ export default function Form({ fetchWeather, postcode_error }) {
   return (
     <>
       <form id="postcode-form">
-        <input id="postcode-input" placeholder="Enter postcode" />
+        <label for="postcode-input">
+          <input id="postcode-input" placeholder="Enter postcode" />
+        </label>
+        <p id="needs-desc">What are your plants hoping for?</p>
+        <div className="plants-need-option">
+          <label for="needs-rainfall">
+            Rainfall
+            <input type="checkbox" id="needs-rainfall" />
+            🌧
+          </label>
+        </div>
+        <div className="plants-need-option">
+          <label for="needs-sunshine">
+            Sunshine
+            <input type="checkbox" id="needs-sunshine" />
+            🌞
+          </label>
+        </div>
         <button
           id="submit-postcode"
           type="submit"
