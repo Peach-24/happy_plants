@@ -7,7 +7,7 @@ export default function Header({ type, reset }) {
       {type === "home" ? (
         <>
           <h1>Happy Plants</h1>
-          <p>Weather tool for your garden </p>{" "}
+          <p>Weather tool for your garden</p>
         </>
       ) : (
         <>

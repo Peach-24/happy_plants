@@ -97,7 +97,6 @@ export default class App extends Component {
             </div>
           )}
         </div>
-        {/* <img src={background} alt={"background"} /> */}
       </div>
     );
   }
