@@ -1,3 +1,7 @@
+## Happy Plants Weather tool
+
+You can check out the weather tool at https://happy-plants-weather.netlify.app
+
 ### Problem Statement
 
 Build a responsive front end UI.
@@ -9,6 +13,11 @@ Build a responsive front end UI.
 #### API
 
 Design and implement a frontend component that allows you to call and consume an open API, then use the data to render a UI on a mobile application.
+
+This project has used: 
+
+- WeatherAPI
+- Postcodes.io API
 
 #### End user
 
