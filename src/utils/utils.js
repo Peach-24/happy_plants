@@ -19,17 +19,11 @@ const trimForecastData = (forecast_data) => {
 };
 
 const generatePlantAdvice = (selections, forecast_weather, daySelected) => {
-  console.log(
-    "Inside advice generator: ",
-    selections,
-    forecast_weather,
-    daySelected
-  );
   if (!selections && !forecast_weather) return "";
   const trimmedForecast = trimForecastData(forecast_weather);
+  let finalStr = "";
 
   if (daySelected === "today") {
-    let finalStr = "";
     if (selections.needs_rainfall) {
       if (trimmedForecast[0].daily_chance_of_rain === "0") {
         finalStr +=
@@ -39,7 +33,6 @@ const generatePlantAdvice = (selections, forecast_weather, daySelected) => {
           "There will be some rain today so you don't need to water your plants if they're outside.";
       }
     }
-
     if (selections.needs_sunshine) {
       if (trimmedForecast[0].uv < 2) {
         finalStr +=
@@ -55,11 +48,8 @@ const generatePlantAdvice = (selections, forecast_weather, daySelected) => {
           " There is sun, sun, sun today. Make sure those plants are hydrated and you've put your suncream on.";
       }
     }
-    return finalStr;
   } else if (daySelected === "tomorrow") {
-    let finalStr = "";
     if (selections.needs_rainfall) {
-      // console.log(typeof trimmedForecast[0].daily_chance_of_rain);
       if (trimmedForecast[1].daily_chance_of_rain === "0") {
         finalStr +=
           "There'll be no rain today. Make sure to water those plants!";
@@ -84,11 +74,8 @@ const generatePlantAdvice = (selections, forecast_weather, daySelected) => {
           " There is sun, sun, sun today. Make sure those plants are hydrated and you've put your suncream on.";
       }
     }
-    return finalStr;
   } else if (daySelected === "day_after") {
-    let finalStr = "";
     if (selections.needs_rainfall) {
-      // console.log(typeof trimmedForecast[0].daily_chance_of_rain);
       if (trimmedForecast[2].daily_chance_of_rain === "0") {
         finalStr +=
           "There'll be no rain today. Make sure to water those plants!";
@@ -113,8 +100,8 @@ const generatePlantAdvice = (selections, forecast_weather, daySelected) => {
           " There is sun, sun, sun today. Make sure those plants are hydrated and you've put your suncream on.";
       }
     }
-    return finalStr;
   }
+  return finalStr;
 };
 
 module.exports = {
