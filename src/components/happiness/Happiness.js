@@ -3,19 +3,27 @@ import "./styles.css";
 
 import { generatePlantAdvice } from "../../utils/utils";
 
-export default function Happiness({ selections, forecast_weather }) {
+export default function Happiness({
+  selections,
+  forecast_weather,
+  daySelected,
+}) {
   const [loaded, setLoaded] = useState(false);
   const [advice, setAdvice] = useState("");
 
   useEffect(() => {
     let mounted = true;
     if (mounted) {
-      let adviceText = generatePlantAdvice(selections, forecast_weather);
+      let adviceText = generatePlantAdvice(
+        selections,
+        forecast_weather,
+        daySelected
+      );
       setAdvice(adviceText);
       setLoaded(true);
     }
     return () => (mounted = false);
-  }, [forecast_weather, selections]);
+  }, [forecast_weather, selections, daySelected]);
 
   return (
     <>
@@ -24,7 +32,7 @@ export default function Happiness({ selections, forecast_weather }) {
           {!selections.needs_rainfall && !selections.needs_sunshine ? (
             <>
               <h3>Let's keep your plants happy</h3>
-              <p id="no-required-weather-message">
+              <p id="no-required-weather-message" className="advice-block">
                 Your plants are healthy at the moment but check out the weather
                 forecast to see if they need watering or if they can go outside
                 for some sunlight.
@@ -37,7 +45,7 @@ export default function Happiness({ selections, forecast_weather }) {
                 {selections.needs_rainfall ? <p>💧 Rain</p> : <p></p>}
                 {selections.needs_sunshine ? <p> 🌞 Sun</p> : <p></p>}
               </div>
-              <p id="advice-block">{advice}</p>
+              <p className="advice-block">{advice}</p>
             </>
           )}
         </div>

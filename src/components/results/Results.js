@@ -78,12 +78,6 @@ export default function Results({
           forecast_weather={forecast_weather.forecastday}
           selections={selections}
         />
-        <div id="happy-breakdown">
-          <Happiness
-            selections={selections}
-            forecast_weather={forecast_weather.forecastday}
-          />
-        </div>
       </div>
     </div>
   );
