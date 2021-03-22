@@ -37,13 +37,14 @@ label {
 
 .plants-need-option {
   display: flex;
+  justify-content: space-evenly;
 }
 
 #needs-rainfall {
-  margin: 0;
+  margin: 0 5px;
 }
 #needs-sunshine {
-  margin: 0;
+  margin: 0 5px;
 }
 
 #needs-desc {

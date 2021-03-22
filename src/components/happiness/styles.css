@@ -9,10 +9,10 @@ h3 {
 }
 
 .advice-block {
-  padding: 10px;
+  padding: 10px 15px;
   margin-top: 5px;
-  font-size: 14px;
-  background-color: rgba(255, 255, 255, 0.685);
+  font-size: 15px;
+  background-color: rgba(255, 255, 255, 0.87);
 }
 
 #your-plants-need {

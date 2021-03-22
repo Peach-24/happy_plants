@@ -12,19 +12,17 @@ export default function Form({
         <label htmlFor="postcode-input">
           <input id="postcode-input" placeholder="Enter postcode" />
         </label>
-        <p id="needs-desc">What are your plants hoping for?</p>
+        <p id="needs-desc">What do your plants need?</p>
         <div className="plants-need-option">
           <label htmlFor="needs-rainfall">
-            Rainfall
+            <strong>💧 Rainfall</strong>
             <input type="checkbox" id="needs-rainfall" />
-            🌧
           </label>
         </div>
         <div className="plants-need-option">
           <label htmlFor="needs-sunshine">
-            Sunshine
+            <strong>🌞 Sunshine</strong>
             <input type="checkbox" id="needs-sunshine" />
-            🌞
           </label>
         </div>
         <button
@@ -41,7 +39,7 @@ export default function Form({
         >
           Go
         </button>
-        <p>{postcode_error}</p>
+        <p id="postcode-error">{postcode_error}</p>
       </form>
     </>
   );
