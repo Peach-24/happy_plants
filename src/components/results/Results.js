@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./styles.css";
 
 import Weather from "../weather/Weather";
-import Happiness from "../happiness/Happiness";
 
 export default function Results({
   current_weather,

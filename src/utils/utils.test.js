@@ -58,6 +58,23 @@ describe("generatePlantAdvice", () => {
   it("returns an empty string when selections are both false", () => {
     const selections = { needs_rainfall: false, needs_sunshine: false };
     const forecast_weather = forecast_weather_data;
-    expect(generatePlantAdvice(selections, forecast_weather)).toBe("");
+    const daySelected = "today";
+    expect(generatePlantAdvice(selections, forecast_weather, daySelected)).toBe(
+      ""
+    );
+  });
+  it("returns just one sentence when only one selection is true", () => {
+    const selections = { needs_rainfall: true, needs_sunshine: false };
+    const forecast_weather = forecast_weather_data;
+    const daySelected = "today";
+    expect(generatePlantAdvice(selections, forecast_weather, daySelected)).toBe(
+      "Doesn't look like there will be any rain. Make sure to water those plants!"
+    );
+    const selections2 = { needs_rainfall: false, needs_sunshine: true };
+    expect(
+      generatePlantAdvice(selections2, forecast_weather, daySelected)
+    ).toBe(
+      " There should be a good amount of sun. Just what your plants need to grow big and strong."
+    );
   });
 });

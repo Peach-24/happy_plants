@@ -31,25 +31,26 @@ const generatePlantAdvice = (selections, forecast_weather, daySelected) => {
 
   if (selections.needs_rainfall) {
     if (trimmedForecast[dayRef[daySelected]].daily_chance_of_rain === "0") {
-      finalStr += "There'll be no rain today. Make sure to water those plants!";
+      finalStr +=
+        "Doesn't look like there will be any rain. Make sure to water those plants!";
     } else {
       finalStr +=
-        "There's a good chance of rain today so you don't need to water your plants if they're outside.";
+        "There's a good chance of rain so you don't need to water your plants if they're outside.";
     }
   }
   if (selections.needs_sunshine) {
     if (trimmedForecast[dayRef[daySelected]].uv < 2) {
       finalStr +=
-        " Hardly any sun today. Hopefully there will be more sun on its way next week. ";
+        " Hardly any sun forecasted. Hopefully there will be more sun on its way next week.";
     } else if (trimmedForecast[dayRef[daySelected]].uv === 2) {
       finalStr +=
-        " There will be some sun today but not much. No need to worry about your plants getting too hot.";
+        " There is some sun forecasted but not much. No need to worry about your plants getting too hot.";
     } else if (trimmedForecast[dayRef[daySelected]].uv === 3) {
       finalStr +=
-        " There should be a good amount of sun today. Just what your plants need to grow big and strong.";
+        " There should be a good amount of sun. Just what your plants need to grow big and strong.";
     } else if (trimmedForecast[dayRef[daySelected]].uv > 3) {
       finalStr +=
-        " There is sun, sun, sun today. Make sure those plants are hydrated and you've put your suncream on.";
+        " There is sun, sun, sun scheduled. Make sure those plants are hydrated and you've put your suncream on.";
     }
   }
   return finalStr;
