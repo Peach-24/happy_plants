@@ -41,9 +41,22 @@ export default function Happiness({
           ) : (
             <>
               <div id="your-plants-need">
-                <p>Your plants need: </p>
-                {selections.needs_rainfall ? <p>💧 Rain</p> : <p></p>}
-                {selections.needs_sunshine ? <p> 🌞 Sun</p> : <p></p>}
+                <p id="your-plants-need-text">Your plants need: </p>
+                {selections.needs_rainfall ? (
+                  <p>
+                    💧 <strong>Rain</strong>
+                  </p>
+                ) : (
+                  <p></p>
+                )}
+                {selections.needs_sunshine ? (
+                  <p>
+                    {" "}
+                    🌞 <strong>Sun</strong>
+                  </p>
+                ) : (
+                  <p></p>
+                )}
               </div>
               <p className="advice-block">{advice}</p>
             </>

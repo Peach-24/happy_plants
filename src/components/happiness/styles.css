@@ -14,3 +14,14 @@ h3 {
   font-size: 14px;
   background-color: rgba(255, 255, 255, 0.685);
 }
+
+#your-plants-need {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#your-plants-need-text {
+  font-size: 14px;
+}

@@ -11,10 +11,12 @@ export default function Header({ type, reset }) {
         </>
       ) : (
         <>
-          <nav id="nav-header">
+          <div id="nav-header">
             <p onClick={() => reset()}>Happy Plants</p>
-            <button onClick={() => reset()}>Reset</button>
-          </nav>
+            <button id="reset-button" onClick={() => reset()}>
+              Reset
+            </button>
+          </div>
         </>
       )}
     </div>

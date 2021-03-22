@@ -1,10 +1,11 @@
 #weather-info {
   display: flex;
   margin: 10px;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 #weather-info-left {
   margin: 10px;
+  text-align: center;
 }
 
 #weather-info-right {
